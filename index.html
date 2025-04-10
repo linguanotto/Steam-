@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEAM+ CAT 413</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      scroll-behavior: smooth;
+      height: 100%;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    header {
+      padding: 20px;
+      text-align: left;
+      font-size: 1rem;
+      background-color: #000;
+    }
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .intro h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #0ff;
+    }
+
+    .intro p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .arrow {
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .arrow:hover {
+      transform: scale(1.1);
+    }
+
+    .grid-section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.5s ease;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 80vmin;
+      height: 80vmin;
+    }
+
+    .btn {
+      background: rgba(0, 255, 255, 0.1);
+      border: 2px solid #0ff;
+      color: #0ff;
+      font-size: 1.2em;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      backdrop-filter: blur(4px);
+    }
+
+    .btn:hover {
+      background: rgba(0, 255, 255, 0.2);
+      scale: 1.05;
+    }
+
+    .header-fixed {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  font-size: 1rem;
+  color: #0ff;
+  z-index: 1000;
+}
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="intro" id="intro">
+    <header class="header-fixed">
+      Flavio Linguanotto - TLD - CAT 413 Mogi das Cruzes
+    </header>
+    <h1>STEAM +</h1>
+    <p>Este site foi desenvolvido para auxiliar professores da disciplina STEAM+ com as ferramentas tecnológicas disponíveis no FabLab e no laboratório de inovação do CAT 413.</p>
+    <a href="#tecnologias">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Arrow-down-yellow.svg/768px-Arrow-down-yellow.svg.png" alt="Seta para baixo" class="arrow">
+    </a>
+  </div>
+
+  <section id="tecnologias" class="grid-section">
+    <div class="grid">
+      <a href="pagina1.html" class="btn" data-bg="https://images.unsplash.com/photo-1518770660439-4636190af475">Botão 1</a>
+      <a href="pagina2.html" class="btn" data-bg="https://images.unsplash.com/photo-1581092334703-900e1bfa7f56">Botão 2</a>
+      <a href="pagina3.html" class="btn" data-bg="https://images.unsplash.com/photo-1626785774573-4a21e1d27d84">Botão 3</a>
+      <a href="pagina4.html" class="btn" data-bg="https://images.unsplash.com/photo-1605902711622-cfb43c4437d1">Botão 4</a>
+      <a href="pagina5.html" class="btn" data-bg="https://images.unsplash.com/photo-1535223289827-42f1e9919769">Botão 5</a>
+      <a href="pagina6.html" class="btn" data-bg="https://images.unsplash.com/photo-1581091012184-5c6610f3f3fc">Botão 6</a>
+      <a href="pagina7.html" class="btn" data-bg="https://images.unsplash.com/photo-1549921296-3a6b1c4afbbc">Botão 7</a>
+      <a href="pagina8.html" class="btn" data-bg="https://images.unsplash.com/photo-1498050108023-c5249f4df085">Botão 8</a>
+      <a href="pagina9.html" class="btn" data-bg="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">Botão 9</a>
+    </div>
+  </section>
+
+  <script>
+    const buttons = document.querySelectorAll('.btn');
+    const gridSection = document.querySelector('.grid-section');
+
+    // Pré-carrega imagens
+    buttons.forEach(button => {
+      const img = new Image();
+      img.src = button.getAttribute('data-bg');
+    });
+
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', () => {
+        gridSection.style.backgroundImage = `url('${button.getAttribute('data-bg')}')`;
+      });
+
+      button.addEventListener('mouseleave', () => {
+        gridSection.style.backgroundImage = '';
+      });
+    });
+  </script>
+</body>
+</html>
