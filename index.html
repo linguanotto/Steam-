@@ -12,18 +12,20 @@
     }
 
     html, body {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
       height: 100%;
       background-color: #000;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    header {
-      padding: 20px;
-      text-align: left;
+    .header-fixed {
+      position: fixed;
+      top: 10px;
+      left: 20px;
       font-size: 1rem;
-      background-color: #000;
+      color: #0ff;
+      z-index: 1000;
     }
 
     .intro {
@@ -60,7 +62,8 @@
     }
 
     .grid-section {
-      height: 100vh;
+      min-height: 100vh;
+      padding-top: 100px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -99,15 +102,6 @@
       scale: 1.05;
     }
 
-    .header-fixed {
-  position: fixed;
-  top: 10px;
-  left: 20px;
-  font-size: 1rem;
-  color: #0ff;
-  z-index: 1000;
-}
-
     @media (max-width: 600px) {
       .grid {
         grid-template-columns: repeat(2, 1fr);
@@ -116,28 +110,29 @@
   </style>
 </head>
 <body>
+  <div class="header-fixed">
+    Flavio Linguanotto - CAT 413 Mogi das Cruzes
+  </div>
+
   <div class="intro" id="intro">
-    <header class="header-fixed">
-      Flavio Linguanotto - TLD - CAT 413 Mogi das Cruzes
-    </header>
     <h1>STEAM +</h1>
     <p>Este site foi desenvolvido para auxiliar professores da disciplina STEAM+ com as ferramentas tecnológicas disponíveis no FabLab e no laboratório de inovação do CAT 413.</p>
-    <a href="#tecnologias">
+    <a id="scroll-seta">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Arrow-down-yellow.svg/768px-Arrow-down-yellow.svg.png" alt="Seta para baixo" class="arrow">
     </a>
   </div>
 
   <section id="tecnologias" class="grid-section">
     <div class="grid">
-      <a href="pagina1.html" class="btn" data-bg="https://images.unsplash.com/photo-1518770660439-4636190af475">Botão 1</a>
-      <a href="pagina2.html" class="btn" data-bg="https://images.unsplash.com/photo-1581092334703-900e1bfa7f56">Botão 2</a>
-      <a href="pagina3.html" class="btn" data-bg="https://images.unsplash.com/photo-1626785774573-4a21e1d27d84">Botão 3</a>
-      <a href="pagina4.html" class="btn" data-bg="https://images.unsplash.com/photo-1605902711622-cfb43c4437d1">Botão 4</a>
-      <a href="pagina5.html" class="btn" data-bg="https://images.unsplash.com/photo-1535223289827-42f1e9919769">Botão 5</a>
-      <a href="pagina6.html" class="btn" data-bg="https://images.unsplash.com/photo-1581091012184-5c6610f3f3fc">Botão 6</a>
-      <a href="pagina7.html" class="btn" data-bg="https://images.unsplash.com/photo-1549921296-3a6b1c4afbbc">Botão 7</a>
-      <a href="pagina8.html" class="btn" data-bg="https://images.unsplash.com/photo-1498050108023-c5249f4df085">Botão 8</a>
-      <a href="pagina9.html" class="btn" data-bg="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">Botão 9</a>
+      <a href="pagina1.html" class="btn" data-bg="https://images.unsplash.com/photo-1518770660439-4636190af475">Notebooks</a>
+      <a href="pagina2.html" class="btn" data-bg="https://images.unsplash.com/photo-1581092334703-900e1bfa7f56">Celulares</a>
+      <a href="pagina3.html" class="btn" data-bg="https://images.unsplash.com/photo-1626785774573-4a21e1d27d84">Impressão 3D</a>
+      <a href="pagina4.html" class="btn" data-bg="https://images.unsplash.com/photo-1605902711622-cfb43c4437d1">Corte a laser</a>
+      <a href="pagina5.html" class="btn" data-bg="https://images.unsplash.com/photo-1535223289827-42f1e9919769">Óculos VR</a>
+      <a href="pagina6.html" class="btn" data-bg="https://images.unsplash.com/photo-1581091012184-5c6610f3f3fc">Prensa </a>
+      <a href="pagina7.html" class="btn" data-bg="https://images.unsplash.com/photo-1549921296-3a6b1c4afbbc">Plotter </a>
+      <a href="pagina8.html" class="btn" data-bg="https://images.unsplash.com/photo-1498050108023-c5249f4df085">Arduinos </a>
+      <a href="pagina9.html" class="btn" data-bg="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">Ferramentas </a>
     </div>
   </section>
 
@@ -159,6 +154,25 @@
       button.addEventListener('mouseleave', () => {
         gridSection.style.backgroundImage = '';
       });
+    });
+
+    // Força rolagem suave real com scrollTo e requestAnimationFrame
+    document.getElementById('scroll-seta').addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetY = document.getElementById('tecnologias').getBoundingClientRect().top + window.pageYOffset;
+      const startY = window.scrollY;
+      const duration = 800;
+      let startTime = null;
+
+      function smoothScroll(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        window.scrollTo(0, startY + (targetY - startY) * progress);
+        if (progress < 1) requestAnimationFrame(smoothScroll);
+      }
+
+      requestAnimationFrame(smoothScroll);
     });
   </script>
 </body>
