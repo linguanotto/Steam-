@@ -12,9 +12,9 @@
     }
 
     .arrow.grande {
-  width: 200px;
-  height: 200px;
-}
+      width: 200px;
+      height: 200px;
+    }
 
     html, body {
       scroll-behavior: auto;
@@ -116,7 +116,7 @@
 </head>
 <body>
   <div class="header-fixed">
-    Flavio Linguanotto -TLD - CAT 413 Mogi das Cruzes
+    Flavio Linguanotto - TLD - CAT 413 Mogi das Cruzes
   </div>
 
   <div class="intro" id="intro">
@@ -137,12 +137,15 @@
       <a href="impressora3d.html" class="btn" data-bg="https://linguanotto.github.io/Steam-/imagens/impressora3d.jpg">Impressão 3D</a>
       <a href="corteLaser.html" class="btn" data-bg="https://linguanotto.github.io/Steam-/imagens/corteLaser.jpg">Corte a laser</a>
       <a href="oculosVR.html" class="btn" data-bg="https://linguanotto.github.io/Steam-/imagens/oculosVR.jpg">Óculos VR</a>
-      <a href="prensa.html" class="btn" data-bg="https://linguanotto.github.io/Steam-/imagens/prensa.jpg">Prensa </a>
-      <a href="plotter.html" class="btn" data-bg="https://linguanotto.github.io/Steam-/imagens/plotter.jpg">Plotter </a>
-      <a href="arduino.html" class="btn" data-bg="https://linguanotto.github.io/Steam-/imagens/arduinos.jpg">Arduinos </a>
-      <a href="ferramentas.html" class="btn" data-bg="https://linguanotto.github.io/Steam-/imagens/ferramentas.jpg">Ferramentas </a>
+      <a href="prensa.html" class="btn" data-bg="https://linguanotto.github.io/Steam-/imagens/prensa.jpg">Prensa</a>
+      <a href="plotter.html" class="btn" data-bg="https://linguanotto.github.io/Steam-/imagens/plotter.jpg">Plotter</a>
+      <a href="arduino.html" class="btn" data-bg="https://linguanotto.github.io/Steam-/imagens/arduinos.jpg">Arduinos</a>
+      <a href="ferramentas.html" class="btn" data-bg="https://linguanotto.github.io/Steam-/imagens/ferramentas.jpg">Ferramentas</a>
     </div>
   </section>
+
+  <!-- Rodapé externo -->
+  <div id="footer-container"></div>
 
   <script>
     const buttons = document.querySelectorAll('.btn');
@@ -154,17 +157,17 @@
       img.src = button.getAttribute('data-bg');
     });
 
+    // Hover background
     buttons.forEach(button => {
       button.addEventListener('mouseenter', () => {
         gridSection.style.backgroundImage = `url('${button.getAttribute('data-bg')}')`;
       });
-
       button.addEventListener('mouseleave', () => {
         gridSection.style.backgroundImage = '';
       });
     });
 
-    // Força rolagem suave real com scrollTo e requestAnimationFrame
+    // Rolagem suave
     document.getElementById('scroll-seta').addEventListener('click', function (e) {
       e.preventDefault();
       const targetY = document.getElementById('tecnologias').getBoundingClientRect().top + window.pageYOffset;
@@ -182,6 +185,13 @@
 
       requestAnimationFrame(smoothScroll);
     });
+
+    // Importa o rodapé externo
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+      });
   </script>
 </body>
 </html>
