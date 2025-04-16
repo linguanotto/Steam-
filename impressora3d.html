@@ -3,62 +3,323 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressão 3D - STEAM+</title>
+  <title>Impressora 3D - Estilo 2</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #000;
-      color: #0ff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding: 40px;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .hero {
+      background: url('https://linguanotto.github.io/Steam-/imagens/impressora3d.jpg') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      padding: 80px 40px;
+      display: flex;
+      align-items: center;
+      height: 80vh;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    .hero-text h1 {
+      font-size: 2.5em;
+      color: #0ff;
+      margin-bottom: 15px;
+    }
+
+    .hero-text p {
+      font-size: 1.1em;
       line-height: 1.6;
     }
 
-    h1, h2 {
-      color: #0ff;
+    .divisao { 
+      height: 50px;
+      background: linear-gradient(to right top, #fff 49%, transparent 51%);
+    }
+
+    .conteudo-branco {
+      background-color: #fff;
+      padding: 60px 40px;
+    }
+
+    .conteudo-branco h2 {
+      font-size: 1.8em;
+      color: #0077cc;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .caixa {
+      color: #000;
+      line-height: 1.7;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .subcaixas {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .subcaixas div {
+      flex: 1;
+      min-width: 250px;
+      text-align: left;
+    }
+
+    .subcaixas h3 {
+      color: #0077cc;
+      border-bottom: 3px solid #0077cc;
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .subcaixas ul {
+      list-style: none;
+      padding-left: 0;
     }
 
     a {
-      color: #0ff;
-      text-decoration: underline;
+      color: #0077cc;
     }
 
-    .voltar {
+    .hero-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .grade-projetos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
       margin-top: 40px;
+    }
+
+    .projeto {
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .projeto img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #0077cc;
+      transition: transform 0.3s ease;
+    }
+
+    .projeto:hover img {
+      transform: scale(1.05);
+    }
+
+    .projeto p {
+      margin-top: 10px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .grade-projetos {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .grade-projetos {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      background-color: rgba(0, 0, 0, 0.75);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-conteudo {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .popup-conteudo img {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 10px;
+    }
+
+    .popup-conteudo p {
+      margin-top: 15px;
+      color: #000;
     }
   </style>
 </head>
 <body>
-  <h1>Impressão 3D na Educação</h1>
-  <p>A impressão 3D é uma ferramenta poderosa para transformar ideias em objetos físicos. Ela estimula o pensamento criativo, habilidades de resolução de problemas e o raciocínio espacial.</p>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Impressora 3D</h1>
+      <p style="background: none; padding: 0; border: none;">
+        <strong>Projetar na impressora 3D é mais fácil do que parece.</strong><br>
+        Com ela, é possível transformar modelos digitais em objetos físicos de forma simples e criativa.<br><br>
+        <strong>Entre as principais vantagens estão:</strong><br>
+        - A prototipagem rápida<br>
+        - O desenvolvimento do raciocínio espacial e aprendizado prático<br><br>
+        <strong>Por outro lado, é importante considerar que:</strong><br>
+        - O tempo de impressão pode ser longo, exigindo planejamento nas atividades
+      </p>
+    </div>
+  </section>
 
-  <h2>📌 Etapas para uso pedagógico</h2>
-  <ol>
-    <li><strong>Escolha o tema:</strong> Relacione a atividade com o conteúdo da aula (ex: corpo humano, figuras geométricas, monumentos históricos).</li>
-    <li><strong>Planeje o modelo:</strong> Use softwares como <a href="https://www.tinkercad.com/" target="_blank">Tinkercad</a> para criar ou adaptar modelos 3D.</li>
-    <li><strong>Salve em STL:</strong> Exporte o arquivo em formato <code>.stl</code>.</li>
-    <li><strong>Prepare para impressão:</strong> Use o software do FabLab (como Ultimaker Cura) para fatiar o arquivo e configurar tempo, material e qualidade.</li>
-    <li><strong>Imprima e utilize:</strong> Após imprimir, integre o objeto nas atividades de aula ou exposições escolares.</li>
-  </ol>
+  <div class="divisao"></div>
 
-  <h2>🎯 Sugestões de uso por disciplina</h2>
-  <ul>
-    <li><strong>Matemática:</strong> Figuras geométricas, sólidos, frações.</li>
-    <li><strong>Ciências:</strong> Partes do corpo humano, moléculas, células.</li>
-    <li><strong>História:</strong> Construções históricas, objetos de época.</li>
-    <li><strong>Geografia:</strong> Relevo, mapas em 3D, regiões.</li>
-    <li><strong>Artes:</strong> Criação de esculturas, carimbos e peças artísticas.</li>
-  </ul>
+  <section class="conteudo-branco">
+    <h2>Como utilizar</h2>
+    <div class="caixa">
+      <p>
+        Os arquivos para impressão podem ser baixados prontos ou até mesmo editados em softwares online gratuitos. Após o preparo, eles devem ser enviados por e-mail no formato <strong>.stl</strong> ao Técnico de Laboratório Didático (TLD) ou Maker da unidade, que fará o envio para impressão.
+      </p>
 
-  <h2>🛠️ Dicas práticas</h2>
-  <ul>
-    <li>Comece com modelos prontos do <a href="https://www.thingiverse.com" target="_blank">Thingiverse</a>.</li>
-    <li>Utilize PLA, que é seguro e fácil de imprimir.</li>
-    <li>Evite modelos muito pequenos ou com muitos detalhes para iniciantes.</li>
-    <li>Estabeleça uma rotina de uso da impressora e envolva os alunos no processo.</li>
-  </ul>
+      <div class="subcaixas">
+        <div>
+          <h3>Materiais</h3>
+          <p>Os principais filamentos utilizados são:</p>
+          <ul>
+            <li><strong>PLA:</strong> biodegradável, fácil de imprimir, ideal para projetos escolares e protótipos simples.</li>
+            <li><strong>ABS:</strong> mais resistente e durável, recomendado para peças que exigem maior robustez, mas requer mais cuidado com a ventilação.</li>
+          </ul>
+        </div>
 
-  <div class="voltar">
-    <a href="index.html">⬅ Voltar para o início</a>
+        <div>
+          <h3>Baixar arquivos prontos</h3>
+          <p>No site <a href="https://www.thingiverse.com/" target="_blank">Thingiverse</a>, há uma enorme variedade de modelos prontos para impressão, facilitando a busca por objetos aplicáveis a projetos escolares.</p>
+        </div>
+
+        <div>
+          <h3>Edição</h3>
+          <p>Mesmo com pouca experiência em modelagem 3D, é possível editar arquivos diretamente no navegador usando o <a href="https://www.tinkercad.com/" target="_blank">Tinkercad</a>. A plataforma é intuitiva e acessível, ideal para iniciantes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="conteudo-branco">
+    <h2>Exemplos de Projetos com Impressora 3D</h2>
+    <div class="grade-projetos">
+      <div class="projeto" onclick="abrirPopup(0)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/notebook.jpg" alt="Porta-chaves personalizado">
+        <p>Porta-chaves personalizado</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(1)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex2.jpg" alt="Suporte de celular">
+        <p>Suporte de celular</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(2)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex3.jpg" alt="Mini busto de personagens">
+        <p>Mini busto de personagens</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(3)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex4.jpg" alt="Carimbo escolar">
+        <p>Carimbo escolar</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(4)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex5.jpg" alt="Nome em 3D">
+        <p>Nome em 3D</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(5)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex6.jpg" alt="Porta-lápis criativo">
+        <p>Porta-lápis criativo</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(6)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex7.jpg" alt="Engrenagens para ensino">
+        <p>Engrenagens para ensino</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(7)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex8.jpg" alt="Marcador de página">
+        <p>Marcador de página</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(8)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex9.jpg" alt="Modelo de célula">
+        <p>Modelo de célula</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal / Popup -->
+  <div id="popup" class="popup" onclick="fecharPopup(event)">
+    <div class="popup-conteudo">
+      <img id="popup-img" src="" alt="">
+      <p id="popup-desc"></p>
+    </div>
   </div>
+
+  <!-- Rodapé externo -->
+  <div id="footer-container"></div>
+
+  <script>
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+      });
+
+    const imagens = [
+      "https://linguanotto.github.io/Steam-/imagens/notebook.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex2.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex3.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex4.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex5.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex6.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex7.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex8.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex9.jpg",
+    ];
+
+    const descricoes = [
+      "blablabka.",
+      "Base de apoio para celular, simples de imprimir e útil no dia a dia dos alunos.",
+      "Miniaturas de personagens históricos ou de filmes para projetos interdisciplinares.",
+      "Carimbos com nomes ou símbolos escolares para marcar atividades.",
+      "Nome dos alunos impresso em 3D, ótimo para identidade visual ou organização.",
+      "Suporte de lápis com formas divertidas, estimulando o design criativo.",
+      "Peças de engrenagens para ensinar conceitos de física e mecânica.",
+      "Marcadores de página em formato criativo para incentivar a leitura.",
+      "Modelos de células animais ou vegetais para uso em ciências e biologia."
+    ];
+
+    function abrirPopup(index) {
+      document.getElementById("popup-img").src = imagens[index];
+      document.getElementById("popup-desc").innerText = descricoes[index];
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function fecharPopup(event) {
+      if (event.target.id === "popup") {
+        document.getElementById("popup").style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
