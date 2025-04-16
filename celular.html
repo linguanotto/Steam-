@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celulares</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .hero {
+      background: url('https://linguanotto.github.io/Steam-/imagens/celular.jpg') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      padding: 80px 40px;
+      display: flex;
+      align-items: center;
+      height: 80vh;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    .hero-text h1 {
+      font-size: 2.5em;
+      color: #0ff;
+      margin-bottom: 15px;
+    }
+
+    .hero-text p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .divisao {
+      height: 50px;
+      background: linear-gradient(to right top, #fff 49%, transparent 51%);
+    }
+
+    .conteudo-branco {
+      background-color: #fff;
+      padding: 60px 40px;
+    }
+
+    .conteudo-branco h2 {
+      font-size: 1.8em;
+      color: #0077cc;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .caixa {
+      color: #000;
+      line-height: 1.7;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .subcaixas {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .subcaixas div {
+      flex: 1;
+      min-width: 250px;
+      text-align: left;
+    }
+
+    .subcaixas h3 {
+      color: #0077cc;
+      border-bottom: 3px solid #0077cc;
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .subcaixas ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .grade-projetos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .projeto {
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .projeto img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #0077cc;
+      transition: transform 0.3s ease;
+    }
+
+    .projeto:hover img {
+      transform: scale(1.05);
+    }
+
+    .projeto p {
+      margin-top: 10px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .grade-projetos { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 500px) {
+      .grade-projetos { grid-template-columns: 1fr; }
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      background-color: rgba(0, 0, 0, 0.75);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-conteudo {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .popup-conteudo img {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 10px;
+    }
+
+    .popup-conteudo p {
+      margin-top: 15px;
+      color: #000;
+    }
+
+    /* Seção de apps */
+    .app-section {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+
+    .app-section img {
+      width: 160px;
+      border-radius: 10px;
+      margin: 10px;
+    }
+
+    .app-text {
+      flex: 1;
+      padding: 20px;
+      color: #000;
+    }
+
+    .app-block {
+      margin-bottom: 50px;
+    }
+
+    .invertido {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 768px) {
+      .app-section { flex-direction: column !important; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Celulares</h1>
+      <p>
+        <strong>Os celulares disponíveis no laboratório permitem múltiplas possibilidades didáticas.</strong><br>
+        Entre as principais vantagens estão:<br>
+        - Mobilidade e facilidade de uso<br>
+        - Grande variedade de aplicativos educacionais<br><br>
+        <strong>Por outro lado, é importante considerar que:</strong><br>
+        - É essencial o controle de uso e a definição clara do objetivo pedagógico.
+      </p>
+    </div>
+  </section>
+
+  <div class="divisao"></div>
+
+  <section class="conteudo-branco">
+    <h2>Como utilizar</h2>
+    <div class="caixa">
+      <p>
+        Os celulares devem ser utilizados com fins pedagógicos, sob orientação do professor.  
+        O TLD/Maker da unidade pode apoiar na instalação de apps, controle de conteúdo e orientação de uso seguro.  
+        <br><br>
+        É recomendado planejar atividades com foco em pesquisa, produção de conteúdo, realidade aumentada ou experiências sensoriais interativas.
+      </p>
+
+      <div class="subcaixas">
+        <div>
+          <h3>Possibilidades de uso</h3>
+          <ul>
+            <li>Realidade aumentada (AR)</li>
+            <li>Leitura de QR codes</li>
+            <li>Pesquisa orientada</li>
+            <li>Produção de vídeos e fotos</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Formatos de atividade</h3>
+          <ul>
+            <li>Caça ao tesouro com QR</li>
+            <li>Vídeos com roteiro</li>
+            <li>Exploração de mapas e espaços</li>
+            <li>Registro de experimentos</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Cuidados com o uso</h3>
+          <ul>
+            <li>Manuseio individual ou em dupla</li>
+            <li>Evitar uso em ambientes úmidos</li>
+            <li>Manter carregamento controlado</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE APPS -->
+  <section class="conteudo-branco">
+    <h2>Aplicativos Indicados</h2>
+
+    <div class="app-block app-section">
+      <img src="https://play-lh.googleusercontent.com/vUoTYEMc1a9HK8NVp3crg3e3Sc5tFubEfe0MTnpF8E-txkoLSldB70NkNLWwMG0eIDc=w240-h480" alt="AppLock">
+      <div class="app-text">
+        <h3>AppLock</h3>
+        <p>Permite bloquear o acesso a aplicativos específicos, garantindo que os alunos usem apenas o necessário durante a atividade.</p>
+      </div>
+    </div>
+
+    <div class="app-block app-section invertido">
+      <img src="https://play-lh.googleusercontent.com/NLLRtGeMQp7OJnC-9Pr5jre27tH5Ad6i0LuQkApCSuETnV5N9v3UwdbNmWwIp03WZIM=w240-h480" alt="Yuna">
+      <div class="app-text">
+        <h3>Yuna</h3>
+        <p>Assistente educacional com inteligência artificial, ajuda alunos com respostas didáticas e bem estruturadas.</p>
+      </div>
+    </div>
+
+    <div class="app-block app-section">
+      <img src="https://play-lh.googleusercontent.com/0ph2KxqSsn4Bk1nEKYrxPus7D1KTrQ-nboVJyz_71rACaq2i6pGEcUGpdiFFBB03-A=w240-h480" alt="Stellarium">
+      <div class="app-text">
+        <h3>Stellarium</h3>
+        <p>Aplicativo de astronomia que permite explorar constelações, planetas e satélites em tempo real. Ideal para ciências e geografia.</p>
+      </div>
+    </div>
+
+    <div class="app-block app-section invertido">
+      <img src="https://play-lh.googleusercontent.com/hO_K7Xb9JhA0UOqHt0LKeWN0gEo9U-QHuIQKnH-2yLkWrD-sQow5-nqKZyf6uFt0UIE=w240-h480" alt="YouTube 360">
+      <div class="app-text">
+        <h3>YouTube (vídeos 360°)</h3>
+        <p>Explore vídeos em 360° com total imersão. Excelente para visitas virtuais, experiências com VR e exploração de conteúdos diversos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA DE PROJETOS COM POPUP -->
+  <section class="conteudo-branco">
+    <h2>Exemplos de Projetos com Celulares</h2>
+    <div class="grade-projetos">
+      <div class="projeto" onclick="abrirPopup(0)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex1.jpg" alt="Vídeo documentário escolar">
+        <p>Vídeo documentário escolar</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(1)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex2.jpg" alt="Exploração de QR codes pela escola">
+        <p>Exploração de QR codes</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(2)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex3.jpg" alt="Caça ao tesouro virtual">
+        <p>Caça ao tesouro virtual</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(3)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex4.jpg" alt="Registros de experimentos">
+        <p>Registros de experimentos</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(4)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex5.jpg" alt="Atividade com vídeo 360°">
+        <p>Atividade com vídeo 360°</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(5)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex6.jpg" alt="Tour virtual com VR">
+        <p>Tour virtual com VR</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(6)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex7.jpg" alt="Gravação de podcast educativo">
+        <p>Podcast educativo</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(7)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex8.jpg" alt="Time-lapse de crescimento vegetal">
+        <p>Time-lapse vegetal</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(8)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex9.jpg" alt="Registro de visitas e eventos">
+        <p>Registro de visitas e eventos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPUP -->
+  <div id="popup" class="popup" onclick="fecharPopup(event)">
+    <div class="popup-conteudo">
+      <img id="popup-img" src="" alt="">
+      <p id="popup-desc"></p>
+    </div>
+  </div>
+
+  <!-- RODAPÉ EXTERNO -->
+  <div id="footer-container"></div>
+
+  <script>
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+      });
+
+    const imagens = [
+      "https://linguanotto.github.io/Steam-/imagens/ex1.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex2.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex3.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex4.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex5.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex6.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex7.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex8.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex9.jpg"
+    ];
+
+    const descricoes = [
+      "Produção de vídeos documentais sobre temas escolares com celular e microfone simples.",
+      "Exploração da escola com QR codes educativos espalhados por diferentes áreas.",
+      "Atividade interativa com dicas geolocalizadas e QR para resolver desafios.",
+      "Registro de experimentos em vídeo ou fotos para montar relatórios digitais.",
+      "Uso de vídeos 360° do YouTube para visitar locais ou experiências imersivas.",
+      "Uso dos celulares com VR para simular passeios, visitas ou viagens.",
+      "Gravação e edição de podcasts temáticos com alunos narrando e roteirizando.",
+      "Captura do crescimento de plantas ao longo de dias com fotos organizadas.",
+      "Fotografia e vídeo dos eventos da escola feitos pelos próprios alunos."
+    ];
+
+    function abrirPopup(index) {
+      document.getElementById("popup-img").src = imagens[index];
+      document.getElementById("popup-desc").innerText = descricoes[index];
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function fecharPopup(event) {
+      if (event.target.id === "popup") {
+        document.getElementById("popup").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
