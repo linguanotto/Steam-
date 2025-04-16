@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corte a Laser</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .hero {
+      background: url('https://linguanotto.github.io/Steam-/imagens/corteLaser.jpg') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      padding: 80px 40px;
+      display: flex;
+      align-items: center;
+      height: 80vh;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    .hero-text h1 {
+      font-size: 2.5em;
+      color: #0ff;
+      margin-bottom: 15px;
+    }
+
+    .hero-text p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .divisao { 
+      height: 50px;
+      background: linear-gradient(to right top, #fff 49%, transparent 51%);
+    }
+
+    .conteudo-branco {
+      background-color: #fff;
+      padding: 60px 40px;
+    }
+
+    .conteudo-branco h2 {
+      font-size: 1.8em;
+      color: #0077cc;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .caixa {
+      color: #000;
+      line-height: 1.7;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .subcaixas {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .subcaixas div {
+      flex: 1;
+      min-width: 250px;
+      text-align: left;
+    }
+
+    .subcaixas h3 {
+      color: #0077cc;
+      border-bottom: 3px solid #0077cc;
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .subcaixas ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    a {
+      color: #0077cc;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .grade-projetos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .projeto {
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .projeto img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #0077cc;
+      transition: transform 0.3s ease;
+    }
+
+    .projeto:hover img {
+      transform: scale(1.05);
+    }
+
+    .projeto p {
+      margin-top: 10px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .grade-projetos {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .grade-projetos {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      background-color: rgba(0, 0, 0, 0.75);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-conteudo {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .popup-conteudo img {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 10px;
+    }
+
+    .popup-conteudo p {
+      margin-top: 15px;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Corte a Laser</h1>
+      <p>
+        <strong>O corte a laser permite realizar cortes e gravações precisas em diversos materiais.</strong><br>
+        Entre as principais vantagens estão:<br>
+        - Corte rápido<br>
+        - Alta precisão<br><br>
+        <strong>Por outro lado, é importante considerar que:</strong><br>
+        - Os cortes são sempre bidimensionais (2D), sendo necessário planejamento e montagem adicional para projetos mais complexos.
+      </p>
+    </div>
+  </section>
+
+  <div class="divisao"></div>
+
+  <section class="conteudo-branco">
+    <h2>Como utilizar</h2>
+    <div class="caixa">
+      <p>
+        Os arquivos para corte a laser devem estar no formato <strong>.svg</strong> (vetorial).  
+        Eles podem ser desenhados online ou enviados ao Técnico de Laboratório Didático (TLD) ou Maker da unidade para preparo e execução.<br><br>
+        É importante ressaltar que o uso da máquina é voltado para fins pedagógicos, priorizando o aprendizado dos alunos durante o processo.
+      </p>
+
+      <div class="subcaixas">
+        <div>
+          <h3>Materiais</h3>
+          <p>Os materiais mais comuns utilizados são:</p>
+          <ul>
+            <li><strong>MDF:</strong> versátil, fácil de cortar e ideal para estruturação de objetos.</li>
+            <li><strong>Papelão:</strong> leve e reciclável, excelente para protótipos e maquetes.</li>
+            <li><strong>Acrílico:</strong> transparente ou colorido, ótimo para acabamentos e placas.</li>
+            <li><strong>EVA:</strong> flexível e fácil de montar, ideal para projetos infantis.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Criar ou baixar arquivos</h3>
+          <p>Você pode criar ou encontrar arquivos vetoriais em plataformas como:</p>
+          <ul>
+            <li><a href="https://www.flaticon.com/" target="_blank">Flaticon</a></li>
+            <li><a href="https://www.freepik.com/" target="_blank">Freepik</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Edição</h3>
+          <p>Para editar os arquivos, recomendamos:</p>
+          <ul>
+            <li><strong>Inkscape:</strong> software gratuito e completo para edição vetorial.</li>
+            <li><strong>Canva (modo vetorial):</strong> ideal para iniciantes e uso rápido no navegador.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="conteudo-branco">
+    <h2>Exemplos de Projetos com Corte a Laser</h2>
+    <div class="grade-projetos">
+      <div class="projeto" onclick="abrirPopup(0)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex1.jpg" alt="Quebra-cabeça de madeira">
+        <p>Quebra-cabeça de madeira</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(1)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex2.jpg" alt="Caixa personalizada">
+        <p>Caixa personalizada</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(2)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex3.jpg" alt="Chaveiro gravado">
+        <p>Chaveiro gravado</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(3)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex4.jpg" alt="Releitura de obra de arte">
+        <p>Releitura de obra de arte</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(4)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex5.jpg" alt="Lembrança escolar">
+        <p>Lembrança escolar</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(5)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex6.jpg" alt="Peças de jogos">
+        <p>Peças de jogos</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(6)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex7.jpg" alt="Placa de porta">
+        <p>Placa de porta</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(7)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex8.jpg" alt="Mascote da escola">
+        <p>Mascote da escola</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(8)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex9.jpg" alt="Régua personalizada">
+        <p>Régua personalizada</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal / Popup -->
+  <div id="popup" class="popup" onclick="fecharPopup(event)">
+    <div class="popup-conteudo">
+      <img id="popup-img" src="" alt="">
+      <p id="popup-desc"></p>
+    </div>
+  </div>
+
+  <!-- Rodapé externo -->
+  <div id="footer-container"></div>
+
+  <script>
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+      });
+
+    const imagens = [
+      "https://linguanotto.github.io/Steam-/imagens/ex1.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex2.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex3.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex4.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex5.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex6.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex7.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex8.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex9.jpg"
+    ];
+
+    const descricoes = [
+      "Quebra-cabeça feito com MDF, ideal para atividades lúdicas e raciocínio lógico.",
+      "Caixa montável cortada a laser com encaixe sem cola, ótima para projetos de design.",
+      "Chaveiro personalizado com nome ou logotipo gravado no acrílico ou MDF.",
+      "Gravação de releituras de obras de arte em madeira feitas por alunos.",
+      "Pequenas lembranças escolares com nomes gravados, excelente para eventos.",
+      "Peças para dominó, jogo da velha e outros jogos educativos.",
+      "Placa com nomes para portas de sala ou projetos pessoais.",
+      "Mascote da escola cortado em MDF ou EVA para decoração.",
+      "Régua com marcações gravadas, útil e fácil de personalizar."
+    ];
+
+    function abrirPopup(index) {
+      document.getElementById("popup-img").src = imagens[index];
+      document.getElementById("popup-desc").innerText = descricoes[index];
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function fecharPopup(event) {
+      if (event.target.id === "popup") {
+        document.getElementById("popup").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

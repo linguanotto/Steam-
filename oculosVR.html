@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Óculos VR</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .hero {
+      background: url('https://linguanotto.github.io/Steam-/imagens/oculosVR.jpg') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      padding: 80px 40px;
+      display: flex;
+      align-items: center;
+      height: 80vh;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    .hero-text h1 {
+      font-size: 2.5em;
+      color: #0ff;
+      margin-bottom: 15px;
+    }
+
+    .hero-text p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .divisao { 
+      height: 50px;
+      background: linear-gradient(to right top, #fff 49%, transparent 51%);
+    }
+
+    .conteudo-branco {
+      background-color: #fff;
+      padding: 60px 40px;
+    }
+
+    .conteudo-branco h2 {
+      font-size: 1.8em;
+      color: #0077cc;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .caixa {
+      color: #000;
+      line-height: 1.7;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .subcaixas {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .subcaixas div {
+      flex: 1;
+      min-width: 250px;
+      text-align: left;
+    }
+
+    .subcaixas h3 {
+      color: #0077cc;
+      border-bottom: 3px solid #0077cc;
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .subcaixas ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    a {
+      color: #0077cc;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .grade-projetos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .projeto {
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .projeto img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #0077cc;
+      transition: transform 0.3s ease;
+    }
+
+    .projeto:hover img {
+      transform: scale(1.05);
+    }
+
+    .projeto p {
+      margin-top: 10px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .grade-projetos {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .grade-projetos {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      background-color: rgba(0, 0, 0, 0.75);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-conteudo {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .popup-conteudo img {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 10px;
+    }
+
+    .popup-conteudo p {
+      margin-top: 15px;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Óculos VR</h1>
+      <p>
+        <strong>Com os óculos de realidade virtual, é possível mergulhar em experiências imersivas e interativas.</strong><br><br>
+        Entre as principais vantagens estão:<br>
+        - Exploração de ambientes em 360°<br>
+        - Aprendizado visual e sensorial ampliado<br><br>
+        <strong>Por outro lado, é importante considerar que:</strong><br>
+        - É necessário selecionar previamente os conteúdos, respeitando o tempo de uso e a faixa etária.<br>
+        - É necessário ser utilizado em conjunto com um celular.
+      </p>
+    </div>
+  </section>
+
+  <div class="divisao"></div>
+
+  <section class="conteudo-branco">
+    <h2>Como utilizar</h2>
+    <div class="caixa">
+      <p>
+        Os óculos VR disponíveis na escola são compatíveis com celulares Android.  
+        Para utilizá-los, o professor pode solicitar apoio ao OED, ou Técnico de Laboratório Didático (TLD) ou Maker da unidade para preparar os conteúdos.  
+        É fundamental priorizar experiências pedagógicas significativas, com tempo de exposição controlado.
+      </p>
+
+      <div class="subcaixas">
+        <div>
+          <h3>Maneira rapida de usar</h3>
+          <ul>
+            <li>pesquise no Youtube e em filtros selecione "360°"</li>
+            <li>Apesquisa pode ser sobre</li>
+            <li>-Museus</li>
+            <li>-Pontos turisticos</li>
+            <li>-Planetas</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Plataformas com conteúdo educativo</h3>
+          <ul>
+            <li>YouTube 360°</li>
+            <li>Google Expeditions (ou alternativas)</li>
+            <li>Sketchfab (modelos 3D)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Criação e adaptação de experiências</h3>
+          <ul>
+            <li>CoSpaces Edu</li>
+            <li>Thinglink</li>
+            <li>Captura com celular 360° ou sites gratuitos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="conteudo-branco">
+    <h2>Exemplos de Projetos com Óculos VR</h2>
+    <div class="grade-projetos">
+      <div class="projeto" onclick="abrirPopup(0)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex1.jpg" alt="Tour virtual pelo sistema solar">
+        <p>Tour virtual pelo sistema solar</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(1)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex2.jpg" alt="Visita a museus em 360°">
+        <p>Visita a museus em 360°</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(2)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex3.jpg" alt="Exploração de células e corpo humano">
+        <p>Exploração de células e corpo humano</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(3)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex4.jpg" alt="Passeio por monumentos históricos">
+        <p>Passeio por monumentos históricos</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(4)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex5.jpg" alt="Simulação de profissões">
+        <p>Simulação de profissões</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(5)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex6.jpg" alt="Aula de artes com obras em VR">
+        <p>Aula de artes com obras em VR</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(6)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex7.jpg" alt="Experiência de empatia">
+        <p>Experiência de empatia</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(7)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex8.jpg" alt="Leitura imersiva de um conto">
+        <p>Leitura imersiva de um conto</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(8)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex9.jpg" alt="Observação de animais no habitat">
+        <p>Observação de animais no habitat</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal / Popup -->
+  <div id="popup" class="popup" onclick="fecharPopup(event)">
+    <div class="popup-conteudo">
+      <img id="popup-img" src="" alt="">
+      <p id="popup-desc"></p>
+    </div>
+  </div>
+
+  <!-- Rodapé externo -->
+  <div id="footer-container"></div>
+
+  <script>
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+      });
+
+    const imagens = [
+      "https://linguanotto.github.io/Steam-/imagens/ex1.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex2.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex3.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex4.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex5.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex6.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex7.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex8.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex9.jpg"
+    ];
+
+    const descricoes = [
+      "Explore o sistema solar em uma jornada imersiva com visualização de planetas em 360°.",
+      "Faça uma visita virtual a museus internacionais, como o Louvre ou o MASP.",
+      "Veja como funciona o corpo humano e células com realidade aumentada e VR.",
+      "Passeie por monumentos históricos e cidades antigas em realidade virtual.",
+      "Vivencie o dia a dia de um cirurgião, engenheiro ou piloto em simulações VR.",
+      "Aproxime-se de obras de arte em uma galeria imersiva que permite observar detalhes.",
+      "Experiência em realidade virtual que promove empatia com realidades sociais.",
+      "Leitura imersiva de histórias com ambientes e personagens 3D.",
+      "Observe animais selvagens em seu habitat natural com vídeos 360° educativos."
+    ];
+
+    function abrirPopup(index) {
+      document.getElementById("popup-img").src = imagens[index];
+      document.getElementById("popup-desc").innerText = descricoes[index];
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function fecharPopup(event) {
+      if (event.target.id === "popup") {
+        document.getElementById("popup").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
