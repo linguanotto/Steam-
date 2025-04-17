@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Celulares</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -148,7 +148,8 @@
       max-height: 90%;
     }
 
-    .popup-conteudo img {
+    .popup-conteudo img,
+    .popup-conteudo iframe {
       max-width: 100%;
       max-height: 400px;
       border-radius: 10px;
@@ -159,7 +160,6 @@
       color: #000;
     }
 
-    /* Seção de apps */
     .app-section {
       max-width: 1000px;
       margin: 0 auto;
@@ -170,12 +170,12 @@
     }
 
     .app-section img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 20px;
-  margin: 20px;
-}
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin: 20px;
+    }
 
     .app-text {
       flex: 1;
@@ -218,7 +218,7 @@
     <div class="caixa">
       <p>
         Os celulares devem ser utilizados com fins pedagógicos, sob orientação do professor.  
-        O TLD/Maker da unidade pode apoiar na instalação de apps, controle de conteúdo e orientação de uso seguro.  
+        O OED ou TLD/Maker da unidade pode apoiar na instalação de apps, controle de conteúdo e orientação de uso seguro.  
         <br><br>
         É recomendado planejar atividades com foco em pesquisa, produção de conteúdo, realidade aumentada ou experiências sensoriais interativas.
       </p>
@@ -233,7 +233,6 @@
             <li>Produção de vídeos e fotos</li>
           </ul>
         </div>
-
         <div>
           <h3>Formatos de atividade</h3>
           <ul>
@@ -243,7 +242,6 @@
             <li>Registro de experimentos</li>
           </ul>
         </div>
-
         <div>
           <h3>Cuidados com o uso</h3>
           <ul>
@@ -256,10 +254,8 @@
     </div>
   </section>
 
-  <!-- SEÇÃO DE APPS -->
   <section class="conteudo-branco">
     <h2>Aplicativos Indicados</h2>
-
     <div class="app-block app-section">
       <img src="https://linguanotto.github.io/Steam-/imagens/appLock.png" alt="AppLock">
       <div class="app-text">
@@ -272,9 +268,7 @@
       <img src="https://linguanotto.github.io/Steam-/imagens/yuna.png" alt="Yuna">
       <div class="app-text">
         <h3>Yuna</h3>
-        <p>O Yuna é um aplicativo gratuito que transforma a leitura infantil em uma experiência mágica e personalizada. 
-            Com ele, os pequenos se tornam os protagonistas das histórias, que podem incluir familiares e até animais de estimação, promovendo uma 
-            conexão emocional e incentivando o hábito da leitura desde cedo</p>
+        <p>O Yuna é um aplicativo gratuito que transforma a leitura infantil em uma experiência mágica e personalizada. Com ele, os pequenos se tornam os protagonistas das histórias, que podem incluir familiares e até animais de estimação.</p>
       </div>
     </div>
 
@@ -282,9 +276,7 @@
       <img src="https://linguanotto.github.io/Steam-/imagens/Stellarium.png" alt="Stellarium">
       <div class="app-text">
         <h3>Stellarium</h3>
-        <p>Aplicativo de astronomia que transforma seu celular em um planetário portátil. Utilizando o giroscópio do dispositivo, ele permite apontar
-             o aparelho para o céu e visualizar, em tempo real, constelações, planetas, estrelas e satélites exatamente na posição em que se encontram. 
-             Ideal para aulas de Ciências e Geografia, o app torna o aprendizado mais interativo e imersivo ao conectar observações do céu com conteúdo científico.</p>
+        <p>Transforma o celular em um planetário. Com o uso do giroscópio, o app permite apontar o dispositivo para o céu e visualizar constelações, planetas e satélites em tempo real.</p>
       </div>
     </div>
 
@@ -297,93 +289,59 @@
     </div>
   </section>
 
-  <!-- GALERIA DE PROJETOS COM POPUP -->
   <section class="conteudo-branco">
     <h2>Exemplos de Projetos com Celulares</h2>
     <div class="grade-projetos">
       <div class="projeto" onclick="abrirPopup(0)">
-        <img src="https://linguanotto.github.io/Steam-/imagens/ex1.jpg" alt="Vídeo documentário escolar">
-        <p>Vídeo documentário escolar</p>
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex1.jpg"><p>Vídeo documentário escolar</p>
       </div>
       <div class="projeto" onclick="abrirPopup(1)">
-        <img src="https://linguanotto.github.io/Steam-/imagens/ex2.jpg" alt="Exploração de QR codes pela escola">
-        <p>Exploração de QR codes</p>
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex2.jpg"><p>Exploração de QR codes</p>
       </div>
       <div class="projeto" onclick="abrirPopup(2)">
-        <img src="https://linguanotto.github.io/Steam-/imagens/ex3.jpg" alt="Caça ao tesouro virtual">
-        <p>Caça ao tesouro virtual</p>
-      </div>
-      <div class="projeto" onclick="abrirPopup(3)">
-        <img src="https://linguanotto.github.io/Steam-/imagens/ex4.jpg" alt="Registros de experimentos">
-        <p>Registros de experimentos</p>
-      </div>
-      <div class="projeto" onclick="abrirPopup(4)">
-        <img src="https://linguanotto.github.io/Steam-/imagens/ex5.jpg" alt="Atividade com vídeo 360°">
-        <p>Atividade com vídeo 360°</p>
-      </div>
-      <div class="projeto" onclick="abrirPopup(5)">
-        <img src="https://linguanotto.github.io/Steam-/imagens/ex6.jpg" alt="Tour virtual com VR">
-        <p>Tour virtual com VR</p>
-      </div>
-      <div class="projeto" onclick="abrirPopup(6)">
-        <img src="https://linguanotto.github.io/Steam-/imagens/ex7.jpg" alt="Gravação de podcast educativo">
-        <p>Podcast educativo</p>
-      </div>
-      <div class="projeto" onclick="abrirPopup(7)">
-        <img src="https://linguanotto.github.io/Steam-/imagens/ex8.jpg" alt="Time-lapse de crescimento vegetal">
-        <p>Time-lapse vegetal</p>
-      </div>
-      <div class="projeto" onclick="abrirPopup(8)">
-        <img src="https://linguanotto.github.io/Steam-/imagens/ex9.jpg" alt="Registro de visitas e eventos">
-        <p>Registro de visitas e eventos</p>
+        <img src="https://www.youtube.com/watch?v=BDTOmX8yS_w"><p>Vídeo dos alunos</p>
       </div>
     </div>
   </section>
 
-  <!-- POPUP -->
   <div id="popup" class="popup" onclick="fecharPopup(event)">
     <div class="popup-conteudo">
-      <img id="popup-img" src="" alt="">
+      <img id="popup-img" src="" alt="" style="display: none;">
+      <iframe id="popup-video" style="display: none;" allowfullscreen></iframe>
       <p id="popup-desc"></p>
     </div>
   </div>
 
-  <!-- RODAPÉ EXTERNO -->
-  <div id="footer-container"></div>
-
   <script>
-    fetch("footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer-container").innerHTML = data;
-      });
-
-    const imagens = [
+    const midias = [
       "https://linguanotto.github.io/Steam-/imagens/ex1.jpg",
       "https://linguanotto.github.io/Steam-/imagens/ex2.jpg",
-      "https://linguanotto.github.io/Steam-/imagens/ex3.jpg",
-      "https://linguanotto.github.io/Steam-/imagens/ex4.jpg",
-      "https://linguanotto.github.io/Steam-/imagens/ex5.jpg",
-      "https://linguanotto.github.io/Steam-/imagens/ex6.jpg",
-      "https://linguanotto.github.io/Steam-/imagens/ex7.jpg",
-      "https://linguanotto.github.io/Steam-/imagens/ex8.jpg",
-      "https://linguanotto.github.io/Steam-/imagens/ex9.jpg"
+      "https://www.youtube.com/watch?v=BDTOmX8yS_w"
     ];
+
+    const tipos = ["img", "img", "video"];
 
     const descricoes = [
       "Produção de vídeos documentais sobre temas escolares com celular e microfone simples.",
       "Exploração da escola com QR codes educativos espalhados por diferentes áreas.",
-      "Atividade interativa com dicas geolocalizadas e QR para resolver desafios.",
-      "Registro de experimentos em vídeo ou fotos para montar relatórios digitais.",
-      "Uso de vídeos 360° do YouTube para visitar locais ou experiências imersivas.",
-      "Uso dos celulares com VR para simular passeios, visitas ou viagens.",
-      "Gravação e edição de podcasts temáticos com alunos narrando e roteirizando.",
-      "Captura do crescimento de plantas ao longo de dias com fotos organizadas.",
-      "Fotografia e vídeo dos eventos da escola feitos pelos próprios alunos."
+      "Vídeo: registro de atividade prática com narração dos alunos."
     ];
 
     function abrirPopup(index) {
-      document.getElementById("popup-img").src = imagens[index];
+      const img = document.getElementById("popup-img");
+      const vid = document.getElementById("popup-video");
+
+      if (tipos[index] === "video") {
+        img.style.display = "none";
+        vid.src = midias[index];
+        vid.style.display = "block";
+      } else {
+        vid.style.display = "none";
+        vid.src = "";
+        img.src = midias[index];
+        img.style.display = "block";
+      }
+
       document.getElementById("popup-desc").innerText = descricoes[index];
       document.getElementById("popup").style.display = "flex";
     }
@@ -391,6 +349,7 @@
     function fecharPopup(event) {
       if (event.target.id === "popup") {
         document.getElementById("popup").style.display = "none";
+        document.getElementById("popup-video").src = "";
       }
     }
   </script>
