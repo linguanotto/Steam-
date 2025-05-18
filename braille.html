@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Visualizador Braille</title>
+  <script src="braille/lightgl.js"></script>
+  <script src="braille/csg.js"></script>
+  <script src="braille/openjscad.js"></script>
+  <script src="braille/braille.jscad" charset="utf-8"></script>
+  <script src="braille/jquery-1.10.1.min.js"></script>
+  <link rel="stylesheet" href="braille/openjscad.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+    }
+    canvas {
+      border: 1px solid #000;
+      width: 100%;
+    }
+  </style>
+</head>
+<body onload="onload()">
+  <h1>Visualizador de Braille 3D</h1>
+  <div id="viewer"></div>
+</body>
+</html>
