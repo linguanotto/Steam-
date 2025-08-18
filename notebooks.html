@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notebooks</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+    .hero {
+      background: url('imagens/notebook.jpg') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      padding: 80px 40px;
+      display: flex;
+      align-items: center;
+      height: 80vh;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+    .hero-text h1 {
+      font-size: 2.5em;
+      color: #0ff;
+      margin-bottom: 15px;
+    }
+    .hero-text p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    .divisao {
+      height: 50px;
+      background: linear-gradient(to right top, #fff 49%, transparent 51%);
+    }
+    .conteudo-branco {
+      background-color: #fff;
+      padding: 60px 40px;
+    }
+    .conteudo-branco h2 {
+      font-size: 1.8em;
+      color: #0077cc;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .caixa {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.7;
+      color: #000;
+    }
+    .subcaixas {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .subcaixas div {
+      flex: 1;
+      min-width: 250px;
+      text-align: left;
+    }
+    .subcaixas h3 {
+      color: #0077cc;
+      border-bottom: 3px solid #0077cc;
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+    .subcaixas ul { list-style: none; padding-left: 0; }
+
+    /* Grade de projetos */
+    .grade-projetos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .projeto { text-align: center; transition: transform .3s ease; cursor: pointer; }
+    .projeto img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #0077cc;
+      transition: transform .3s ease;
+    }
+    .projeto:hover img { transform: scale(1.05); }
+    .projeto p { margin-top: 10px; color: #000; font-weight: bold; }
+
+    /* Popup */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      background-color: rgba(0, 0, 0, 0.75);
+      top: 0; left: 0; width: 100%; height: 100%;
+      justify-content: center; align-items: center;
+    }
+    .popup-conteudo {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 90%;
+      max-height: 90%;
+    }
+    .popup-conteudo img,
+    .popup-conteudo iframe {
+      max-width: 100%;
+      max-height: 400px;
+      border-radius: 10px;
+    }
+    .popup-conteudo p { margin-top: 15px; color: #000; }
+
+    /* Seção Sites sugeridos (layout estilo “apps indicados”) */
+    .site-block { max-width: 1000px; margin: 0 auto 50px; display: flex; align-items: center; flex-wrap: wrap; }
+    .site-block .icon {
+      width: 120px; height: 120px; border-radius: 20px; margin: 20px;
+      display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;
+      background: #eaf7ff; border: 2px solid #0077cc; color: #0077cc;
+    }
+    .site-text { flex: 1; padding: 20px; }
+    .invertido { flex-direction: row-reverse; }
+
+    a { color: #0077cc; }
+
+    @media (max-width: 768px) {
+      .site-block { flex-direction: column !important; text-align: center; }
+      .grade-projetos { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 500px) {
+      .grade-projetos { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Notebooks</h1>
+      <p>
+        <strong>Os notebooks do laboratório são a base para pesquisas, produções e simulações.</strong><br><br>
+        Entre as principais vantagens estão:<br>
+        - Acesso a softwares e sites educacionais<br>
+        - Possibilidade de trabalho em duplas e projetos colaborativos<br><br>
+        <strong>Por outro lado, é importante considerar que:</strong><br>
+        - É essencial planejar o tempo de uso e organizar arquivos em pastas compartilhadas.
+      </p>
+    </div>
+  </section>
+
+  <div class="divisao"></div>
+
+  <section class="conteudo-branco">
+    <h2>Como utilizar</h2>
+    <div class="caixa">
+      <p>
+        Os notebooks devem ser utilizados com objetivos pedagógicos claros. O OED ou TLD/Maker pode apoiar na instalação de softwares,
+        no acesso à internet segura e na organização de contas/alunos. Recomenda-se preparar previamente os links, roteiros de pesquisa
+        e modelos de documentos para os estudantes.
+      </p>
+      <div class="subcaixas">
+        <div>
+          <h3>Possibilidades de uso</h3>
+          <ul>
+            <li>Pesquisa orientada e curadoria de fontes</li>
+            <li>Simulações científicas e visualizações</li>
+            <li>Produção de textos, apresentações e planilhas</li>
+            <li>Programação (Scratch, Python web, p5.js)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Formatos de atividade</h3>
+          <ul>
+            <li>Webquest com formulário-guia</li>
+            <li>Relatório com prints e referências</li>
+            <li>Coleta e análise de dados em planilha</li>
+            <li>Prototipagem digital (Tinkercad, Canva)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Cuidados</h3>
+          <ul>
+            <li>Salvar frequentemente (nuvem ou pendrive)</li>
+            <li>Evitar alimentos e líquidos na bancada</li>
+            <li>Respeitar a organização das pastas da turma</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="conteudo-branco">
+    <h2>Sites sugeridos</h2>
+
+    <div class="site-block">
+      <img class="icon" src="imagens/notebook/mercadofablab.png" alt="Mercado FabLab">
+      <div class="site-text">
+        <h3><a href="#" title="Aplicação desenvolvida localmente">Mercado FabLab</a></h3>
+        <p>
+          Simulador de compras para atividades gamificadas e educação financeira.
+          <strong>Produzido no SESI 413</strong> para uso em projetos pedagógicos da unidade.
+          Ideal para trabalho em grupo, tomada de decisão e resolução de problemas.
+        </p>
+      </div>
+    </div>
+
+    <div class="site-block invertido">
+      <img class="icon" src="imagens/notebook/phet-social-media-logo.png" alt="PhET">
+      <div class="site-text">
+        <h3><a href="https://phet.colorado.edu/pt/" target="_blank" rel="noopener">PhET (Universidade do Colorado)</a></h3>
+        <p>
+          Simuladores interativos de Ciências e Matemática. Útil para experimentos virtuais,
+          exploração guiada e reforço conceitual com visualizações dinâmicas.
+        </p>
+      </div>
+    </div>
+
+    <div class="site-block">
+      <img class="icon" src="imagens/notebook/templatemaker.png" alt="TemplateMaker">
+      <div class="site-text">
+        <h3><a href="https://www.templatemaker.nl/pt/" target="_blank" rel="noopener">TemplateMaker</a></h3>
+        <p>
+          Gera moldes paramétricos (caixas, cones, envelopes) para impressão e montagem.
+          Excelente para integrar Matemática, Arte e Design – e combinar com a plotter ou a tesoura.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="conteudo-branco">
+    <h2>Exemplos de Projetos com Notebooks</h2>
+    <div class="grade-projetos">
+      <div class="projeto" onclick="abrirPopup(0)">
+        <img src="imagens/notebook.jpg" alt="Relatório investigativo com fontes confiáveis">
+        <p>Relatório investigativo</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(1)">
+        <img src="imagens/impressora3d.jpg" alt="Modelagem no Tinkercad e documentação">
+        <p>Modelagem + documentação</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(2)">
+        <img src="imagens/oculosVR.jpg" alt="Exploração de simulações PhET com print e análise">
+        <p>Simulações PhET</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup -->
+  <div id="popup" class="popup" onclick="fecharPopup(event)">
+    <div class="popup-conteudo" id="popup-conteudo">
+      <img id="popup-img" src="" alt="" style="display: none;">
+      <p id="popup-desc"></p>
+    </div>
+  </div>
+
+  <!-- Rodapé externo -->
+  <div id="footer-container"></div>
+
+  <script>
+    // Importa o rodapé
+    fetch("footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-container").innerHTML = html);
+
+    // Pop-up com suporte a imagem e (se quiser no futuro) vídeo YouTube
+    const midias = [
+      "imagens/notebook.jpg",
+      "imagens/impressora3d.jpg",
+      "imagens/oculosVR.jpg"
+    ];
+    const tipos = ["img", "img", "img"]; // troque para "video" e passe a URL do embed se quiser um vídeo
+    const descricoes = [
+      "Produção de um relatório investigativo com roteiro de pesquisa, referências e prints de tela.",
+      "Prototipagem no Tinkercad + documento com etapas, imagens e reflexões do processo.",
+      "Roteiro de exploração em simuladores PhET com captura de evidências e análise dos resultados."
+    ];
+
+    function abrirPopup(index) {
+      const img = document.getElementById("popup-img");
+      const conteudo = document.getElementById("popup-conteudo");
+
+      const iframeAntigo = document.getElementById("popup-video");
+      if (iframeAntigo) iframeAntigo.remove();
+
+      if (tipos[index] === "video") {
+        img.style.display = "none";
+        const iframe = document.createElement("iframe");
+        iframe.id = "popup-video";
+        iframe.src = midias[index]; // ex.: "https://www.youtube.com/embed/ID?rel=0&modestbranding=1"
+        iframe.width = "100%";
+        iframe.height = "400";
+        iframe.allowFullscreen = true;
+        iframe.style.borderRadius = "10px";
+        iframe.style.marginTop = "10px";
+        conteudo.insertBefore(iframe, document.getElementById("popup-desc"));
+      } else {
+        img.src = midias[index];
+        img.style.display = "block";
+      }
+
+      document.getElementById("popup-desc").innerText = descricoes[index];
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function fecharPopup(event) {
+      if (event.target.id === "popup") {
+        document.getElementById("popup").style.display = "none";
+        const iframe = document.getElementById("popup-video");
+        if (iframe) iframe.remove();
+      }
+    }
+  </script>
+</body>
+</html>
