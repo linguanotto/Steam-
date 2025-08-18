@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arduinos</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background:#fff;color:#000;
+    }
+    .hero{
+      background:url('imagens/arduinos.jpg') no-repeat center center/cover;
+      color:#fff;padding:80px 40px;display:flex;align-items:center;
+      height:80vh;position:relative;clip-path:polygon(0 0,100% 0,100% 90%,0 100%);
+    }
+    .hero-text h1{font-size:2.5em;color:#0ff;margin-bottom:15px}
+    .hero-text p{font-size:1.1em;line-height:1.6}
+    .divisao{height:50px;background:linear-gradient(to right top,#fff 49%,transparent 51%)}
+    .conteudo-branco{background:#fff;padding:60px 40px}
+    .conteudo-branco h2{font-size:1.8em;color:#0077cc;margin-bottom:20px;text-align:center}
+    .caixa{max-width:1200px;margin:0 auto;text-align:center;line-height:1.7;color:#000}
+    .subcaixas{display:flex;justify-content:space-around;flex-wrap:wrap;gap:40px;margin-top:40px}
+    .subcaixas div{flex:1;min-width:250px;text-align:left}
+    .subcaixas h3{color:#0077cc;border-bottom:3px solid #0077cc;display:inline-block;margin-bottom:10px;font-size:1.2em}
+    .subcaixas ul{list-style:none;padding-left:0}
+    a{color:#0077cc}
+
+    .grade-projetos{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:40px
+    }
+    .projeto{text-align:center;transition:transform .3s ease;cursor:pointer}
+    .projeto img{width:100%;border-radius:10px;border:2px solid #0077cc;transition:transform .3s ease;height:200px;object-fit:cover}
+    .projeto:hover img{transform:scale(1.05)}
+    .projeto p{margin-top:10px;color:#000;font-weight:bold}
+
+    .popup{
+      display:none;position:fixed;z-index:9999;background:rgba(0,0,0,.75);
+      inset:0;justify-content:center;align-items:center
+    }
+    .popup-conteudo{
+      background:#fff;padding:20px;border-radius:10px;text-align:center;max-width:90%;max-height:90%
+    }
+    .popup-conteudo img{max-width:100%;max-height:400px;border-radius:10px}
+    .popup-conteudo p{margin-top:15px;color:#000}
+
+    @media (max-width:768px){.grade-projetos{grid-template-columns:1fr 1fr}}
+    @media (max-width:500px){.grade-projetos{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Arduinos</h1>
+      <p>
+        <strong>O Arduino é uma plataforma de prototipagem eletrônica acessível e poderosa.</strong><br>
+        Ideal para desenvolver projetos de automação, coleta de dados e robótica educacional.<br><br>
+        <strong>Vantagens:</strong><br>
+        - Aprendizagem mão na massa e interdisciplinar<br>
+        - Ampla comunidade e exemplos prontos<br><br>
+        <strong>Considere que:</strong><br>
+        - É necessário planejamento de componentes e segurança elétrica (5V).
+      </p>
+    </div>
+  </section>
+
+  <div class="divisao"></div>
+
+  <section class="conteudo-branco">
+    <h2>Como utilizar</h2>
+    <div class="caixa">
+      <p>
+        Os kits de Arduino podem ser usados em atividades guiadas ou projetos abertos.
+        O OED/TLD pode apoiar na escolha de componentes, montagem em protoboard e testes no IDE.
+      </p>
+
+      <div class="subcaixas">
+        <div>
+          <h3>Componentes básicos</h3>
+          <ul>
+            <li>Placa Arduino (UNO/Nano) e cabo USB</li>
+            <li>Protoboard, jumpers e resistores</li>
+            <li>LEDs, botões, potenciômetro, buzzer</li>
+            <li>Sensores (LDR, DHT11/22, ultrassônico), servos</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Ferramentas e softwares</h3>
+          <ul>
+            <li><a href="https://www.arduino.cc/en/software" target="_blank" rel="noopener">Arduino IDE</a></li>
+            <li><a href="https://www.tinkercad.com/circuits" target="_blank" rel="noopener">Tinkercad Circuits</a> (simulação)</li>
+            <li><a href="https://wokwi.com/" target="_blank" rel="noopener">Wokwi</a> (simulação avançada)</li>
+            <li><a href="https://fritzing.org/" target="_blank" rel="noopener">Fritzing</a> (diagramas)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Cuidados e segurança</h3>
+          <ul>
+            <li>Trabalhar com 5V, evitar curtos na protoboard</li>
+            <li>Desligar USB ao montar/desmontar circuitos</li>
+            <li>Organizar componentes por turma e registrar uso</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="conteudo-branco">
+    <h2>Exemplos de Projetos com Arduino</h2>
+    <div class="grade-projetos">
+      <div class="projeto" onclick="abrirPopup(0)">
+        <img src="imagens/arduinos.jpg" alt="Semáforo com LEDs">
+        <p>Semáforo com LEDs</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(1)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex2.jpg" alt="Sensor de distância + buzzer">
+        <p>Alarme ultrassônico</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(2)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex3.jpg" alt="Servo + potenciômetro">
+        <p>Controle de servo</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(3)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex4.jpg" alt="DHT11 + LCD">
+        <p>Estação meteo</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(4)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex5.jpg" alt="Seguidor de linha (conceito)">
+        <p>Seguidor de linha</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(5)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex6.jpg" alt="PIR + buzzer">
+        <p>Alarme de presença</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(6)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex7.jpg" alt="LDR + Serial Plotter">
+        <p>Medidor de luz</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(7)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex8.jpg" alt="Jogo do reflexo">
+        <p>Jogo do reflexo</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(8)">
+        <img src="https://linguanotto.github.io/Steam-/imagens/ex9.jpg" alt="Cartão SD">
+        <p>Data logger simples</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal / Popup -->
+  <div id="popup" class="popup" onclick="fecharPopup(event)">
+    <div class="popup-conteudo">
+      <img id="popup-img" src="" alt="">
+      <p id="popup-desc"></p>
+    </div>
+  </div>
+
+  <!-- Rodapé externo -->
+  <div id="footer-container"></div>
+
+  <script>
+    // Rodapé
+    fetch("footer.html").then(r => r.text()).then(html => {
+      document.getElementById("footer-container").innerHTML = html;
+    });
+
+    // Midias e descrições do popup
+    const imagens = [
+      "imagens/arduinos.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex2.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex3.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex4.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex5.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex6.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex7.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex8.jpg",
+      "https://linguanotto.github.io/Steam-/imagens/ex9.jpg"
+    ];
+
+    const descricoes = [
+      "Circuito com três LEDs (vermelho, amarelo, verde) e temporização com delay() ou millis().",
+      "Sensor ultrassônico HC-SR04 aciona buzzer quando a distância é menor que o limite.",
+      "Controle de ângulo de um servo via leitura analógica de um potenciômetro.",
+      "Temperatura/umidade com DHT11/22 e exibição em LCD 16x2 (I2C).",
+      "Conceito de robótica móvel: leitura de sensores infravermelhos de linha e lógica básica.",
+      "Detecção de movimento com sensor PIR e alerta sonoro/visual.",
+      "LDR registra variação de luz; visualizar no Serial Plotter para análise de dados.",
+      "Jogo para medir reflexo: LED acende aleatório e o aluno pressiona o botão.",
+      "Registro de leituras em cartão SD (tempo, valor) para análise posterior."
+    ];
+
+    function abrirPopup(i){
+      document.getElementById("popup-img").src = imagens[i];
+      document.getElementById("popup-desc").innerText = descricoes[i];
+      document.getElementById("popup").style.display = "flex";
+    }
+    function fecharPopup(ev){
+      if(ev.target.id === "popup"){
+        document.getElementById("popup").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

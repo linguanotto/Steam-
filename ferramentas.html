@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferramentas</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #fff; color: #000; }
+
+    .hero{
+      background: url('imagens/ferramentas.jpg') no-repeat center center/cover;
+      color:#fff; padding:80px 40px; display:flex; align-items:center;
+      height:80vh; position:relative; clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+    .hero-text h1 { font-size: 2.5em; color:#0ff; margin-bottom: 15px; }
+    .hero-text p { font-size: 1.1em; line-height: 1.6; }
+
+    .divisao { height: 50px; background: linear-gradient(to right top, #fff 49%, transparent 51%); }
+
+    .conteudo-branco { background:#fff; padding:60px 40px; }
+    .conteudo-branco h2 { font-size:1.8em; color:#0077cc; margin-bottom:20px; text-align:center; }
+
+    .caixa { max-width:1200px; margin:0 auto; text-align:center; line-height:1.7; color:#000; }
+
+    .subcaixas { display:flex; justify-content:space-around; flex-wrap:wrap; gap:40px; margin-top:40px; }
+    .subcaixas div { flex:1; min-width:250px; text-align:left; }
+    .subcaixas h3 { color:#0077cc; border-bottom:3px solid #0077cc; display:inline-block; margin-bottom:10px; font-size:1.2em; }
+    .subcaixas ul { list-style:none; padding-left:0; }
+    a { color:#0077cc; }
+
+    .grade-projetos {
+      display:grid; grid-template-columns:repeat(3, 1fr); gap:30px; margin-top:40px;
+    }
+    .projeto { text-align:center; transition: transform .3s ease; cursor:pointer; }
+    .projeto img {
+      width:100%; height:200px; object-fit:cover;
+      border-radius:10px; border:2px solid #0077cc; transition: transform .3s ease;
+    }
+    .projeto:hover img { transform: scale(1.05); }
+    .projeto p { margin-top:10px; color:#000; font-weight:bold; }
+
+    .popup {
+      display:none; position:fixed; z-index:9999; background:rgba(0,0,0,.75);
+      inset:0; justify-content:center; align-items:center;
+    }
+    .popup-conteudo {
+      background:#fff; padding:20px; border-radius:10px; text-align:center;
+      max-width:90%; max-height:90%;
+    }
+    .popup-conteudo img { max-width:100%; max-height:400px; border-radius:10px; }
+    .popup-conteudo p { margin-top:15px; color:#000; }
+
+    @media (max-width:768px){ .grade-projetos{ grid-template-columns:1fr 1fr; } }
+    @media (max-width:500px){ .grade-projetos{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Ferramentas</h1>
+      <p>
+        <strong>O uso de ferramentas desenvolve autonomia, resolução de problemas e pensamento projetual.</strong><br>
+        Com um kit básico, os alunos conseguem prototipar, consertar e personalizar objetos com segurança.<br><br>
+        <strong>Vantagens:</strong><br>
+        - Atividades mão na massa e interdisciplinares<br>
+        - Resultados rápidos e concretos<br><br>
+        <strong>Atenção:</strong><br>
+        - Sempre usar EPI adequado e seguir os procedimentos do laboratório.
+      </p>
+    </div>
+  </section>
+
+  <div class="divisao"></div>
+
+  <section class="conteudo-branco">
+    <h2>Como utilizar</h2>
+    <div class="caixa">
+      <p>
+        Antes de iniciar, alinhe objetivo pedagógico, organize os materiais por estação e explique as regras de segurança.
+        O OED/TLD apoia a preparação das bancadas, o empréstimo e a devolução dos kits.
+      </p>
+
+      <div class="subcaixas">
+        <div>
+          <h3>Kit básico</h3>
+          <ul>
+            <li>Chaves de fenda/philips, chave allen</li>
+            <li>Alicates (bico, corte, universal)</li>
+            <li>Trena, régua metálica, esquadro</li>
+            <li>Estilete, tesoura, cola quente, fita dupla face</li>
+            <li>Parafusos, porcas, arruelas e abraçadeiras</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Boas práticas (5S)</h3>
+          <ul>
+            <li>Separar e identificar kits por turma</li>
+            <li>Usar bandejas e devolver cada item ao lugar</li>
+            <li>Check-list de retirada e devolução</li>
+            <li>Limpeza da bancada ao final</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Segurança (EPI)</h3>
+          <ul>
+            <li>Óculos de proteção sempre que houver corte/furação</li>
+            <li>Cabelos presos e mangas ajustadas</li>
+            <li>Uso supervisionado de estilete/cola quente</li>
+            <li>Relatar danos e substituir lâminas cegas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="conteudo-branco">
+    <h2>Exemplos de Projetos com Ferramentas</h2>
+    <div class="grade-projetos">
+      <div class="projeto" onclick="abrirPopup(0)">
+        <img src="imagens/ferramentas.jpg" alt="Organizador de ferramentas 5S">
+        <p>Organizador 5S</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(1)">
+        <img src="imagens/corteLaser.jpg" alt="Montagem com MDF cortado a laser">
+        <p>Montagem em MDF</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(2)">
+        <img src="imagens/plotter.jpg" alt="Aplicação de vinil">
+        <p>Aplicação de vinil</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(3)">
+        <img src="imagens/prensa.jpg" alt="Prensagem de patches em tecido">
+        <p>Patches em tecido</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(4)">
+        <img src="imagens/impressora3d.jpg" alt="Acabamento e montagem de peças 3D">
+        <p>Acabamento 3D</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(5)">
+        <img src="imagens/arduinos.jpg" alt="Fixação de sensores e organização de cabos">
+        <p>Fixação para Arduino</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(6)">
+        <img src="imagens/notebook.jpg" alt="Gabarito de medidas e registro fotográfico">
+        <p>Gabarito & registro</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(7)">
+        <img src="imagens/celular.jpg" alt="Suporte de celular em madeira ou MDF">
+        <p>Suporte de celular</p>
+      </div>
+      <div class="projeto" onclick="abrirPopup(8)">
+        <img src="imagens/oculosVR.jpg" alt="Cenografia/props para atividades VR">
+        <p>Props para VR</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal / Popup -->
+  <div id="popup" class="popup" onclick="fecharPopup(event)">
+    <div class="popup-conteudo">
+      <img id="popup-img" src="" alt="">
+      <p id="popup-desc"></p>
+    </div>
+  </div>
+
+  <!-- Rodapé externo -->
+  <div id="footer-container"></div>
+
+  <script>
+    // Importa o rodapé
+    fetch("footer.html")
+      .then(r => r.text())
+      .then(html => document.getElementById("footer-container").innerHTML = html);
+
+    // Midias/descrições do popup (todas imagens locais)
+    const imagens = [
+      "imagens/ferramentas.jpg",
+      "imagens/corteLaser.jpg",
+      "imagens/plotter.jpg",
+      "imagens/prensa.jpg",
+      "imagens/impressora3d.jpg",
+      "imagens/arduinos.jpg",
+      "imagens/notebook.jpg",
+      "imagens/celular.jpg",
+      "imagens/oculosVR.jpg"
+    ];
+
+    const descricoes = [
+      "Placa perfurada e divisórias: desenhe o layout das ferramentas (shadow board) e aplique o método 5S.",
+      "Montagem de peças cortadas a laser usando parafusos/porcas e lixas para acabamento.",
+      "Aplicação de vinil em superfícies planas: técnica de máscara e espátula para evitar bolhas.",
+      "Prensagem de pequenos patches em tecido com cuidado à temperatura e tempo.",
+      "Remoção de suportes, lixamento leve e parafusos para unir partes impressas.",
+      "Organização de sensores/placas com abraçadeiras, fita dupla face e espaçadores.",
+      "Criação de gabarito de medidas e registro fotográfico do processo para o relatório.",
+      "Confecção de suporte simples para celular (MDF ou madeira) com parafusos.",
+      "Criação de props/cenários simples para enriquecer atividades com óculos VR."
+    ];
+
+    function abrirPopup(i){
+      document.getElementById("popup-img").src = imagens[i];
+      document.getElementById("popup-desc").innerText = descricoes[i];
+      document.getElementById("popup").style.display = "flex";
+    }
+    function fecharPopup(ev){
+      if(ev.target.id === "popup"){
+        document.getElementById("popup").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
